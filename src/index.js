@@ -1,3 +1,4 @@
+/* global google */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as firebase from "firebase";
@@ -5,8 +6,8 @@ import Routes from './routes'
 import './index.css';
 
 class App extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         var config = {
             apiKey: "AIzaSyBr9wGS-JzixSHSMJpdVXGz-DyUPjlNdNg",
             authDomain: "mapa-de-startup.firebaseapp.com",
@@ -21,9 +22,12 @@ class App extends React.Component{
     render() {
         console.log("app render");
         return (
-                <Routes />
+                <Routes/>
         );
     }
 }
 
-ReactDOM.render(<App />,document.getElementById('root'));
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);

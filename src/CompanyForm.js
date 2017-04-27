@@ -1,6 +1,9 @@
 import React from 'react';
 import * as firebase from 'firebase'
 import './CompanyForm.css';
+import axios from 'axios';
+
+
 
 class CompanyForm extends React.Component{
     constructor(props) {
@@ -19,30 +22,41 @@ class CompanyForm extends React.Component{
             faturamento: '',
             investidores: '',
             capital: '',
-            validated: false
+            validated: false,
+            coordenadas: ''
         };
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick()  {
+        const API_KEY = "AIzaSyAosQCjfUicx1aC_YCAQjOP56JNbNiBzN4";
         console.log("Botão foi clicado!");
-        this.newCompany = ( {
-            razao: document.getElementById('razao').value,
-            cnpj: document.getElementById('cnpj').value,
-            localizacao: document.getElementById('localizacao').value,
-            site: document.getElementById('site').value,
-            datainicio: document.getElementById('data-inicio').value,
-            areaatuacao: document.getElementById('area-atuacao').value,
-            logo: document.getElementById('logo').value,
-            situacao: document.getElementById('situacao').value,
-            produto: document.getElementById('produto').value,
-            publico: document.getElementById('publico').value,
-            faturamento: document.getElementById('faturamento').value,
-            investidores: document.getElementById('investidores').value,
-            capital: document.getElementById('capital').value,
-            validated: false          
-        })
-        firebase.database().ref('company/').push(this.newCompany);
-        console.log("- Envio Concluido");
+        var address = document.getElementById('localizacao').value;
+        address = address.replace(' ','+');
+        var requisicao = axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=' + API_KEY)
+            .then((response) => {
+                console.log(response.data.results[0].geometry.location.lat);
+                this.newCompany =  {
+                    razao: document.getElementById('razao').value,
+                    cnpj: document.getElementById('cnpj').value,
+                    localizacao: document.getElementById('localizacao').value,
+                    site: document.getElementById('site').value,
+                    datainicio: document.getElementById('data-inicio').value,
+                    areaatuacao: document.getElementById('area-atuacao').value,
+                    logo: document.getElementById('logo').value,
+                    situacao: document.getElementById('situacao').value,
+                    produto: document.getElementById('produto').value,
+                    publico: document.getElementById('publico').value,
+                    faturamento: document.getElementById('faturamento').value,
+                    investidores: document.getElementById('investidores').value,
+                    capital: document.getElementById('capital').value,
+                    validated: false,
+                    coordenadas: response.data.results[0].geometry.location
+                };
+                firebase.database().ref('company/').push(this.newCompany);
+            });
+
+
+
     }
     render(){
         return (
