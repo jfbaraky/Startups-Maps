@@ -1,28 +1,6 @@
 import React from 'react';
 import * as firebase from 'firebase'
-import './App.css';
-
-class App extends React.Component{
-    constructor(){
-        super();
-        var config = {
-            apiKey: "AIzaSyBr9wGS-JzixSHSMJpdVXGz-DyUPjlNdNg",
-            authDomain: "mapa-de-startup.firebaseapp.com",
-            databaseURL: "https://mapa-de-startup.firebaseio.com",
-            projectId: "mapa-de-startup",
-            storageBucket: "mapa-de-startup.appspot.com",
-            messagingSenderId: "562968674625"
-        };
-        firebase.initializeApp(config);
-        console.log("Firebase Inicializado!");
-    }
-    render() {
-        return (
-            <CompanyForm/>
-        );
-    }
-}
-export default App;
+import './CompanyForm.css';
 
 class CompanyForm extends React.Component{
     constructor(props) {
@@ -60,7 +38,8 @@ class CompanyForm extends React.Component{
             publico: document.getElementById('publico').value,
             faturamento: document.getElementById('faturamento').value,
             investidores: document.getElementById('investidores').value,
-            capital: document.getElementById('capital').value            
+            capital: document.getElementById('capital').value,
+            validated: false          
         })
         firebase.database().ref('company/').push(this.newCompany);
         console.log("- Envio Concluido");
@@ -68,6 +47,7 @@ class CompanyForm extends React.Component{
     render(){
         return (
             <div>
+                <h1> Cadastro de Startup </h1>
                 <label htmlFor="razao">Razão:</label>
                 <input type="text" id="razao"/>
                 <label htmlFor="cnpj">CNPJ:</label>
@@ -79,7 +59,7 @@ class CompanyForm extends React.Component{
                 <label htmlFor="colaboradores">Número de colaboradores:</label>
                 <input type="text" id="colaboradores" />
                 <label htmlFor="data-inicio">Data de início:</label>
-                <input type="text" id="data-inicio" />
+                <input type="date" id="data-inicio" />
                 <label htmlFor="area-atuacao">Área de atuação:</label>
                 <input type="text" id="area-atuacao" />
                 <label htmlFor="logo">Logo Upload:</label>
@@ -102,4 +82,4 @@ class CompanyForm extends React.Component{
     }
 }
 
-
+export default CompanyForm;
