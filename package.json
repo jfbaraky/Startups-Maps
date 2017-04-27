@@ -9,6 +9,8 @@
   },
   "devDependencies": {
     "firebase": "^3.9.0",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
     "react-scripts": "0.9.5"
   },
   "scripts": {

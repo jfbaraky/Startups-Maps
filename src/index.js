@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as firebase from "firebase";
-import CompanyForm from './CompanyForm';
+import Routes from './routes'
 import './index.css';
 
 class App extends React.Component{
@@ -19,13 +19,14 @@ class App extends React.Component{
         console.log("Firebase Inicializado!");
     }
     render() {
+        console.log("app render");
         return (
-            <CompanyForm/>
+                <Routes />
         );
     }
 }
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+    <App />,
+    document.getElementById('root')
 );
