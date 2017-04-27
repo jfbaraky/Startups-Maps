@@ -40,7 +40,8 @@ class CompanyForm extends React.Component{
             publico: '',
             faturamento: '',
             investidores: '',
-            capital: ''
+            capital: '',
+            validated: false
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -59,7 +60,7 @@ class CompanyForm extends React.Component{
             publico: document.getElementById('publico').value,
             faturamento: document.getElementById('faturamento').value,
             investidores: document.getElementById('investidores').value,
-            capital: document.getElementById('capital').value
+            capital: document.getElementById('capital').value            
         })
         firebase.database().ref('company/').push(this.newCompany);
         console.log("- Envio Concluido");
