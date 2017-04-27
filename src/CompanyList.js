@@ -49,11 +49,15 @@ class CompanyList extends React.Component{
                                     <tr key={startup._id}>
                                         <td>
                                             <a href={startup.site}>{startup.razao}</a>
-
+                                            {startup.validated === true ?
+                                                <div>Validada</div>
+                                                :
+                                                <div>Não Validada</div>
+                                            }
                                         </td>
-                                    </tr>)
-                                })
-                            }
+                                    </tr>
+                                )
+                            })}
                         </tbody>
                     </table>
                 }

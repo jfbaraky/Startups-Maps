@@ -47,36 +47,66 @@ class CompanyForm extends React.Component{
     render(){
         return (
             <div>
-                <h1> Cadastro de Startup </h1>
-                <label htmlFor="razao">Razão:</label>
-                <input type="text" id="razao"/>
-                <label htmlFor="cnpj">CNPJ:</label>
-                <input type="text" id="cnpj"/>
-                <label htmlFor="localizacao">Localização:</label>
-                <input type="text" id="localizacao" />
-                <label htmlFor="site">Site:</label>
-                <input type="text" id="site" />
-                <label htmlFor="colaboradores">Número de colaboradores:</label>
-                <input type="text" id="colaboradores" />
-                <label htmlFor="data-inicio">Data de início:</label>
-                <input type="date" id="data-inicio" />
-                <label htmlFor="area-atuacao">Área de atuação:</label>
-                <input type="text" id="area-atuacao" />
-                <label htmlFor="logo">Logo Upload:</label>
-                <input type="text" id="logo" />
-                <label htmlFor="situacao">Situação de atividade:</label>
-                <input type="text" id="situacao" />
-                <label htmlFor="produto">Principal Produto:</label>
-                <input type="text" id="produto" />
-                <label htmlFor="publico">Público Alvo:</label>
-                <input type="text" id="publico" />
-                <label htmlFor="faturamento">Faturamento Anual:</label>
-                <input type="text" id="faturamento" />
-                <label htmlFor="investidores">Investidores:</label>
-                <input type="text" id="investidores" />
-                <label htmlFor="capital">Capital Primário:</label>
-                <input type="text" id="capital" />
-                <button onClick={this.handleClick}>Submit</button>
+                <h1> Cadastro de Startups </h1>
+                <div>
+                    <label htmlFor="razao">Razão:</label>
+                    <input type="text" id="razao"/>
+                </div>
+                <div>
+                    <label htmlFor="cnpj">CNPJ:</label>
+                    <input type="text" id="cnpj"/>
+                </div>
+                <div>
+                    <label htmlFor="localizacao">Localização:</label>
+                    <input type="text" id="localizacao" />
+                </div>
+                <div>
+                    <label htmlFor="site">Site:</label>
+                    <input type="text" id="site" />
+                </div>
+                <div>
+                    <label htmlFor="colaboradores">Número de colaboradores:</label>
+                    <input type="text" id="colaboradores" />
+                </div>
+                <div>
+                    <label htmlFor="data-inicio">Data de início:</label>
+                    <input type="date" id="data-inicio" />
+                </div>
+                <div>
+                    <label htmlFor="area-atuacao">Área de atuação:</label>
+                    <input type="text" id="area-atuacao" />
+                </div>
+                <div>
+                    <label htmlFor="logo">Logo Upload:</label>
+                    <input type="text" id="logo" />
+                </div>
+                <div>
+                    <label htmlFor="situacao">Situação de atividade:</label>
+                    <input type="text" id="situacao" />
+                </div>
+                <div>
+                    <label htmlFor="produto">Principal Produto:</label>
+                    <input type="text" id="produto" />
+                </div>
+                <div>
+                    <label htmlFor="publico">Público Alvo:</label>
+                    <input type="text" id="publico" />
+                </div>
+                <div>
+                    <label htmlFor="faturamento">Faturamento Anual:</label>
+                    <input type="text" id="faturamento" />
+                </div>
+                <div>
+                    <label htmlFor="investidores">Investidores:</label>
+                    <input type="text" id="investidores" />
+                </div>
+                <div>
+                    <label htmlFor="capital">Capital Primário:</label>
+                    <input type="text" id="capital" />
+                </div>
+                <div>
+                    <button onClick={this.handleClick}>Submit</button>
+                </div>
             </div>
         );
     }
