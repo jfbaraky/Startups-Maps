@@ -75,9 +75,6 @@ class CompanyForm extends React.Component{
             }).catch((erro)=>{
                 console.log(erro);
         });
-
-
-
     }
     render(){
         return (
@@ -187,7 +184,7 @@ class CompanyForm extends React.Component{
                     <input className="formInput" type="text" id="capital" />
                 </div>
                 <div>
-                    <button className="formButton" type="submit" onClick={this.handleClick}>Submit</button>
+                    <button className="formButton" type="reset" onClick={this.handleClick}>Submit</button>
                 </div>
             </div>
         );

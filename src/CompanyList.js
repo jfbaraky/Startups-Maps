@@ -2,8 +2,6 @@ import React from 'react';
 import * as firebase from "firebase";
 import './CompanyList.css';
 
-import CompanyEdit from "./CompanyEdit";
-
 
 class CompanyList extends React.Component{
     constructor(){
@@ -86,46 +84,55 @@ class CompanyList extends React.Component{
                 {this.state.company==null?
                     <div>Carregando...</div>
                     :
-                    <table className="dashboardHeader">
-                        <thead>
-                            <tr>
-                                <th>Lista de Empresas</th>
-                                <th>Mostrar no Mapa</th>
-                                <th colSpan="4">Controle</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {this.state.company.map(function(startup){
-                            return(
-                                <tr key={startup._id}>
-                                    <td>
-                                        <a className="dashboardName" href={startup.site}>{startup.razao}</a>
-                                    </td>
-                                    <td>
-                                        {startup.validated===true?
-                                            <div className="validada">Validada</div>
-                                            :
-                                            <div className="naovalidada">Não Validada</div>
-                                        }
-                                    </td>
-                                    <td>
-                                        <button className="dashboardButton" type="submit" >Edit</button>
-                                    </td>
-                                    <td>
-                                        <button className="dashboardButton" type="submit" onClick={!startup.validated?()=>this.approveCompany(startup._id):null} >Approve</button>
-                                    </td>
-                                    <td>
-                                        <button className="dashboardButton" type="submit" onClick={startup.validated?()=>this.rejectCompany(startup._id):null} >Reject</button>
-                                    </td>
-                                    <td>
-                                        <button className="dashboardButton" type="submit" onClick={()=>this.deleteCompany(startup._id)}>Delete</button>
-                                    </td>
-
+                    <div>
+                        <h1 className="dashboardTitle">Lista de Empresas</h1>
+                        <h2 className="dashboardTitle">{this.state.company.length} registros inseridos</h2>
+                        <table className="dashboardHeader">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Mostrar no Mapa</th>
+                                    <th colSpan="4">Controle</th>
                                 </tr>
-                            )
-                        }.bind(this))}
-            </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {this.state.company.map(function(startup){
+                                    return(
+                                        <tr key={startup._id}>
+                                            <td>
+                                                <a className="dashboardName" href={startup.site}>{startup.razao}</a>
+                                            </td>
+                                            <td>
+                                                {startup.validated===true?
+                                                    <div className="validada">Validada</div>
+                                                    :
+                                                    <div className="naovalidada">Não Validada</div>
+                                                }
+                                            </td>
+                                            <td>
+                                                <button className="dashboardButton" type="submit" >Edit</button>
+                                            </td>
+                                            <td>
+                                                <button
+                                                    className={startup.validated?"dashboardButtonApproved":"dashboardButton"}
+                                                    type="submit" onClick={!startup.validated?()=>this.approveCompany(startup._id):null} >
+                                                    Approve
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button className="dashboardButton" type="submit" onClick={startup.validated?()=>this.rejectCompany(startup._id):null} >Reject</button>
+                                            </td>
+                                            <td>
+                                                <button className="dashboardButton" type="submit" onClick={()=>this.deleteCompany(startup._id)}>Delete</button>
+                                            </td>
+
+                                        </tr>
+                                    )
+                                }.bind(this))}
+                            </tbody>
+                        </table>
+                        <a className="newCompany" href="/#/form">Inserir nova empresa</a>
+                    </div>
                 }
             </div>
         );

@@ -1,7 +1,38 @@
+.dashboardTitle {
+    padding: 5px 20px;
+}
+.newCompany{
+    width: 20%;
+    float: left;
+    background-color: #235ab2 ;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+
+}
 .dashboardButton{
     width: 100%;
     float: left;
     background-color: #4CAF50 ;
+    color: white;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.dashboardButton:hover {
+    background-color: #45a049 ;
+}
+
+.dashboardButtonApproved{
+    width: 100%;
+    float: left;
+    background-color: gray ;
     color: white;
     padding: 10px 10px;
     margin: 10px 10px;
