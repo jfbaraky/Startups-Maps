@@ -11,7 +11,7 @@ class Routes extends React.Component {
                 <div>
                     <Route path='/list' component={CompanyList}/>
                     <Route path='/form' component={CompanyForm}/>
-                    <Redirect from='*' to='/form' />
+                    <Redirect from='*' to='/list' />
                 </div>
             </Router>
         );

@@ -9,6 +9,7 @@ class CompanyForm extends React.Component{
     constructor(props) {
         super(props);
         this.newCompany = {
+            _id: '',
             razao: '',
             telefone: '',
             cnpj: '',
