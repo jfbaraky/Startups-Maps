@@ -11,8 +11,34 @@
 }
 
 .dashboardName{
+    font-size: medium;
+    font-weight: bold;
     padding-left: 20px;
+    margin: 0px 50px;
     float: left;
     clear: left;
     display: inline-block;
+    text-align: center;
+}
+.validada{
+    width: 80%;
+    float: left;
+    color: green;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+.naovalidada{
+    width: 80%;
+    float: left;
+    color: red;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
 }

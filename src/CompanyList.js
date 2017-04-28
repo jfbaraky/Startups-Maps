@@ -86,10 +86,12 @@ class CompanyList extends React.Component{
                 {this.state.company==null?
                     <div>Carregando...</div>
                     :
-                    <table className='table'>
+                    <table className="dashboardHeader">
                         <thead>
                             <tr>
                                 <th>Lista de Empresas</th>
+                                <th>Mostrar no Mapa</th>
+                                <th colSpan="4">Controle</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,9 +103,9 @@ class CompanyList extends React.Component{
                                     </td>
                                     <td>
                                         {startup.validated===true?
-                                            <div className="validada">- Validada</div>
+                                            <div className="validada">Validada</div>
                                             :
-                                            <div className="naovalidada">- Não Validada</div>
+                                            <div className="naovalidada">Não Validada</div>
                                         }
                                     </td>
                                     <td>

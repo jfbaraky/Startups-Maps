@@ -84,11 +84,12 @@ class CompanyForm extends React.Component{
             <div>
                 <h1> Cadastro de Startups </h1>
 
-                <h2> Dados Principais </h2>
+                <h2 className="formTitle"> Dados Principais </h2>
 
                 <div>
-                    <label htmlFor="razao">Razão:</label>
+                    <label className="formLabel" htmlFor="razao">Razão:</label>
                     <input
+                        className="formInput"
                         type="name"
                         id="razao"
                         placeholder="Nome da Empresa"
@@ -96,8 +97,9 @@ class CompanyForm extends React.Component{
                     />
                 </div>
                 <div>
-                    <label htmlFor="telefone">Telefone:</label>
+                    <label className="formLabel" htmlFor="telefone">Telefone:</label>
                     <input
+                        className="formInput"
                         type="tel"
                         id="telefone"
                         placeholder="(XX)XXXXX-XXXX"
@@ -105,8 +107,9 @@ class CompanyForm extends React.Component{
                     />
                 </div>
                 <div>
-                    <label htmlFor="site">Site:</label>
+                    <label className="formLabel" htmlFor="site">Site:</label>
                     <input
+                        className="formInput"
                         type="url"
                         id="site"
                         placeholder="Site da Empresa"
@@ -114,8 +117,9 @@ class CompanyForm extends React.Component{
                     />
                 </div>
                 <div>
-                    <label htmlFor="localizacao">Localização:</label>
+                    <label className="formLabel" htmlFor="localizacao">Localização:</label>
                     <input
+                        className="formInput"
                         type="text"
                         id="localizacao"
                         placeholder="Endereço da Empresa"
@@ -123,13 +127,13 @@ class CompanyForm extends React.Component{
                     />
                 </div>
                 <div>
-                    <label htmlFor="data-inicio">Data de início:</label>
-                    <input type="date" id="data-inicio" required/>
+                    <label className="formLabel" htmlFor="data-inicio">Data de início:</label>
+                    <input className="formInput" type="date" id="data-inicio" required/>
                 </div>
                 <div>
 
-                    <label htmlFor="area-atuacao">Área de atuação:</label>
-                    <select id="area-atuacao">
+                    <label className="formLabel" htmlFor="area-atuacao">Área de atuação:</label>
+                    <select className="formSelect" id="area-atuacao">
                         <option value="startup">Startup</option>
                         <option value="aceleradora">Aceleradora</option>
                         <option value="incubadora">Incubadora</option>
@@ -141,8 +145,8 @@ class CompanyForm extends React.Component{
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="situacao">Situação de atividade:</label>
-                    <select id="situacao">
+                    <label className="formLabel" htmlFor="situacao">Situação de atividade:</label>
+                    <select className="formSelect" id="situacao">
                         <option value="ativa">Ativa</option>
                         <option value="inativa">Inativa</option>
                     </select>
@@ -151,39 +155,39 @@ class CompanyForm extends React.Component{
                 <h2> Dados Secundários </h2>
 
                 <div>
-                    <label htmlFor="logo">Logo Upload:</label>
-                    <input type="text" id="logo" />
+                    <label className="formLabel" htmlFor="logo">Logo Upload:</label>
+                    <input className="formInput" type="text" id="logo" />
                 </div>
                 <div>
-                    <label htmlFor="cnpj">CNPJ:</label>
-                    <input type="text" id="cnpj"/>
+                    <label className="formLabel" htmlFor="cnpj">CNPJ:</label>
+                    <input className="formInput" type="text" id="cnpj"/>
                 </div>
                 <div>
-                    <label htmlFor="produto">Principal Produto:</label>
-                    <input type="text" id="produto" />
+                    <label className="formLabel" htmlFor="produto">Principal Produto:</label>
+                    <input className="formInput" type="text" id="produto" />
                 </div>
                 <div>
-                    <label htmlFor="colaboradores">Número de colaboradores:</label>
-                    <input type="text" id="colaboradores" />
+                    <label className="formLabel" htmlFor="colaboradores">Número de colaboradores:</label>
+                    <input className="formInput" type="text" id="colaboradores" />
                 </div>
                 <div>
-                    <label htmlFor="publico">Público Alvo:</label>
-                    <input type="text" id="publico" />
+                    <label className="formLabel" htmlFor="publico">Público Alvo:</label>
+                    <input className="formInput" type="text" id="publico" />
                 </div>
                 <div>
-                    <label htmlFor="faturamento">Faturamento Anual:</label>
-                    <input type="text" id="faturamento" />
+                    <label className="formLabel" htmlFor="faturamento">Faturamento Anual:</label>
+                    <input className="formInput" type="text" id="faturamento" />
                 </div>
                 <div>
-                    <label htmlFor="investidores">Investidores:</label>
-                    <input type="text" id="investidores" />
+                    <label className="formLabel" htmlFor="investidores">Investidores:</label>
+                    <input className="formInput" type="text" id="investidores" />
                 </div>
                 <div>
-                    <label htmlFor="capital">Capital Primário:</label>
-                    <input type="text" id="capital" />
+                    <label className="formLabel" htmlFor="capital">Capital Primário:</label>
+                    <input className="formInput" type="text" id="capital" />
                 </div>
                 <div>
-                    <button type="submit" onClick={this.handleClick}>Submit</button>
+                    <button className="formButton" type="submit" onClick={this.handleClick}>Submit</button>
                 </div>
             </div>
         );
