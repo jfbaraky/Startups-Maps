@@ -2,6 +2,9 @@ import React from 'react';
 import * as firebase from "firebase";
 import './CompanyList.css';
 
+import CompanyEdit from "./CompanyEdit";
+
+
 class CompanyList extends React.Component{
     constructor(){
         super();
@@ -104,13 +107,13 @@ class CompanyList extends React.Component{
                                         }
                                     </td>
                                     <td>
-                                        <button className="dashboardButton" type="submit"  >Edit</button>
+                                        <button className="dashboardButton" type="submit" >Edit</button>
                                     </td>
                                     <td>
-                                        <button className="dashboardButton" type="submit" onClick={()=>this.approveCompany(startup._id)} >Approve</button>
+                                        <button className="dashboardButton" type="submit" onClick={!startup.validated?()=>this.approveCompany(startup._id):null} >Approve</button>
                                     </td>
                                     <td>
-                                        <button className="dashboardButton" type="submit" onClick={()=>this.rejectCompany(startup._id)} >Reject</button>
+                                        <button className="dashboardButton" type="submit" onClick={startup.validated?()=>this.rejectCompany(startup._id):null} >Reject</button>
                                     </td>
                                     <td>
                                         <button className="dashboardButton" type="submit" onClick={()=>this.deleteCompany(startup._id)}>Delete</button>
