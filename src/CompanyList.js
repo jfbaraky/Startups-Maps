@@ -10,7 +10,7 @@ class CompanyList extends React.Component{
     }
     readDB(){
         console.log("readDB");
-        var companiesRef = firebase.database().ref('company');
+        var companiesRef = firebase.database().ref('teste/');
         var list = [];
         companiesRef.once('value').then(function(snapshot){
             list = snapshot.val();
